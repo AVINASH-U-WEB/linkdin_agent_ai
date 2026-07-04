@@ -55,7 +55,7 @@ export default function Home() {
     // 1. Re-check the backend — if it's still processing, restore the generating UI
     dispatch(checkGenerationOnMount());
     // 2. Fetch health & calendar
-    fetch("http://localhost:8000/health")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/health`)
       .then(r => r.json()).then(setHealth).catch(() => {});
     dispatch(fetchCalendar());
 
@@ -94,7 +94,7 @@ export default function Home() {
 
     const poll = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/workflow/progress");
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/workflow/progress`);
         if (res.ok) {
           const data = await res.json();
           dispatch(updateProgress(data));
@@ -121,7 +121,7 @@ export default function Home() {
     setShowGeneratorModal(false);
 
     try {
-      const res = await fetch("http://localhost:8000/api/workflow/generate-weekly", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/workflow/generate-weekly`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),

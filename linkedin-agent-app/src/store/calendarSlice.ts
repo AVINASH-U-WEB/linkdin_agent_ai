@@ -20,7 +20,7 @@ export interface CalendarState {
 export const fetchCalendar = createAsyncThunk(
   'calendar/fetch',
   async () => {
-    const res = await fetch('http://localhost:8000/api/posts/calendar');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/calendar`);
     if (!res.ok) throw new Error('Calendar fetch failed');
     const data = await res.json();
     return (data.calendar || []) as Post[];
@@ -30,7 +30,7 @@ export const fetchCalendar = createAsyncThunk(
 export const resetCalendar = createAsyncThunk(
   'calendar/reset',
   async () => {
-    const res = await fetch('http://localhost:8000/api/posts/calendar/reset', { method: 'POST' });
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/calendar/reset`, { method: 'POST' });
     if (!res.ok) throw new Error('Reset failed');
     return [];
   }

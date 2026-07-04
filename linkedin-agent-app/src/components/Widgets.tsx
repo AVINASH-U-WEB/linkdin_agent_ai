@@ -21,7 +21,7 @@ export const WeeklyPlannerForm = ({ onGenerate, isGenerating }: { onGenerate: (d
     if (savedAudience) setAudience(savedAudience);
     
     // Check if user has scraped posts
-    fetch("http://localhost:8000/api/user/scraped-status")
+    fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/user/scraped-status`)
       .then(res => res.json())
       .then(data => {
         setHasScrapedPosts(data.has_scraped_posts);

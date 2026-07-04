@@ -1,18 +1,20 @@
 FROM python:3.10-slim
 
-# Set working directory
+# Hugging Face requires running as a non-root user
+RUN useradd -m -u 1000 user
+USER user
+ENV PATH="/home/user/.local/bin:$PATH"
+
 WORKDIR /app
 
-# Copy requirements first to leverage Docker cache
-COPY requirements.txt .
-# Install dependencies (no-cache-dir reduces image size)
+# Copy requirements first
+COPY --chown=user ./requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of the application
-COPY . .
+# Copy all files
+COPY --chown=user . /app
 
-# Hugging Face Spaces exposes port 7860 by default for Docker spaces
 EXPOSE 7860
 
-# Command to run the FastAPI app on the correct port
+# Run FastAPI app
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "7860"]

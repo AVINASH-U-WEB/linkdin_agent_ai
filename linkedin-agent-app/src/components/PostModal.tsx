@@ -18,7 +18,7 @@ const PostModal = ({ post, onClose, onPublish }: PostModalProps) => {
   const handleAnalyze = async () => {
     try {
       setIsAnalyzing(true);
-      const res = await fetch("http://localhost:8000/api/posts/analyze", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/analyze`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ draft_text: editedDraft })

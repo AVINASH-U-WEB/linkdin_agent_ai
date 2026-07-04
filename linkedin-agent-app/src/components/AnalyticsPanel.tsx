@@ -24,7 +24,7 @@ const PostAnalysisTab = ({ calendar }: { calendar: any[] }) => {
     setBulkReport(null);
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/posts/analyze', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ draft_text: post.draft || post.text }),
@@ -44,7 +44,7 @@ const PostAnalysisTab = ({ calendar }: { calendar: any[] }) => {
     setAnalysis(null);
     setSelectedPost(null);
     try {
-      const res = await fetch('http://localhost:8000/api/linkedin/analyze-posts', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/linkedin/analyze-posts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({}),
@@ -74,7 +74,7 @@ const PostAnalysisTab = ({ calendar }: { calendar: any[] }) => {
     formData.append('file', file);
 
     try {
-      const res = await fetch('http://localhost:8000/api/linkedin/upload-csv', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/linkedin/upload-csv`, {
         method: 'POST',
         body: formData,
       });
@@ -94,7 +94,7 @@ const PostAnalysisTab = ({ calendar }: { calendar: any[] }) => {
     setIsLoading(true);
     setLinkedinPosts([]);
     try {
-      const res = await fetch('http://localhost:8000/api/linkedin/posts?count=15');
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/linkedin/posts?count=15`);
       const data = await res.json();
       if (data.posts && data.posts.length > 0) {
         setLinkedinPosts(data.posts);
@@ -302,7 +302,7 @@ const AccountAnalysisTab = () => {
     setIsLoading(true);
     setAnalysis(null);
     try {
-      const res = await fetch('http://localhost:8000/api/account/analyze', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/account/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ industry, target_audience: audience, goal }),
@@ -409,7 +409,7 @@ const AccountAnalysisTab = () => {
               setFullAudit(null);
               setAnalysis(null);
               try {
-                const res = await fetch('http://localhost:8000/api/account/full-analysis', {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/account/full-analysis`, {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({ industry, target_audience: audience, goal, name: 'User', posts: [] }),
@@ -494,7 +494,7 @@ const AiAutopilotTab = ({ calendar, onGenerate }: { calendar: any[], onGenerate:
     setIsLoading(true);
 
     try {
-      const res = await fetch('http://localhost:8000/api/posts/analyze', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/analyze`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -534,7 +534,7 @@ const AiAutopilotTab = ({ calendar, onGenerate }: { calendar: any[], onGenerate:
                 setChatInput('');
                 setMessages(prev => [...prev, { role: 'user', text: action.prompt }]);
                 setIsLoading(true);
-                fetch('http://localhost:8000/api/posts/analyze', {
+                fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/analyze`, {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                   body: JSON.stringify({ draft_text: action.prompt }),
@@ -660,7 +660,7 @@ const EngagementTab = () => {
     setIsLoading(true);
     setReplies(null);
     try {
-      const res = await fetch('http://localhost:8000/api/comments/reply', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/comments/reply`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ comment, post_context: postContext }),

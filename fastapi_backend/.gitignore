@@ -1,0 +1,11 @@
+.env
+venv/
+env/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+server_log.txt
+server_err.txt

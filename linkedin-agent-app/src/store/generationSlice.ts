@@ -43,7 +43,7 @@ const initialState: GenerationState = {
 export const checkGenerationOnMount = createAsyncThunk(
   'generation/checkOnMount',
   async () => {
-    const res = await fetch('http://localhost:8000/api/workflow/progress');
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/workflow/progress`);
     if (!res.ok) return null;
     return (await res.json()) as GenProgress;
   }
