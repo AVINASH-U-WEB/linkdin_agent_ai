@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>LinkedIn AI Scraper</title>
+  <style>
+    :root {
+      --background: #e6eff8;
+      --foreground: #1a2b4c;
+      --card-bg: #ffffff;
+      --card-border: rgba(255,255,255,0.4);
+      --glass-bg: rgba(255, 255, 255, 0.65);
+      --glass-shadow: rgba(31, 38, 135, 0.05);
+      --crex-blue: #1668e8;
+      --text-muted: #8fa0b5;
+    }
+    
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #0d1117;
+        --foreground: #e6edf3;
+        --card-bg: #161b22;
+        --card-border: rgba(48, 54, 61, 0.8);
+        --glass-bg: rgba(22, 27, 34, 0.85);
+        --glass-shadow: rgba(0, 0, 0, 0.3);
+        --text-muted: #7d8590;
+      }
+    }
+
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding: 16px;
+      background-color: var(--background);
+      color: var(--foreground);
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 32px var(--glass-shadow);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    h2 {
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    h2 svg {
+      width: 18px;
+      height: 18px;
+      color: var(--crex-blue);
+    }
+
+    .hint {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #7c3aed, #2563eb);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .btn:disabled {
+      background: var(--text-muted);
+      box-shadow: none;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #status {
+      margin-top: 16px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-align: center;
+      min-height: 20px;
+      background: var(--background);
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+        <line x1="12" y1="22.08" x2="12" y2="12"/>
+      </svg>
+      AI Extractor
+    </h2>
+    <p class="hint">Open your LinkedIn activity page, then click below to sync posts to your dashboard.</p>
+    <button id="scrapeBtn" class="btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+      Extract & Sync Posts
+    </button>
+    <div id="status">Waiting for sync...</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,338 @@
+INFO:     127.0.0.1:54758 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54761 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54764 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54765 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54766 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54767 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54768 - "POST /api/posts/calendar/reset HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54769 - "POST /api/workflow/generate-weekly HTTP/1.1" 200 OK
+  [Background Weekly] Worker started for theme: 'AI agent and AI automation in business'
+  [Background Weekly] Brainstormed topics: ["Day 1: 'AI Revolution in Business: What You Need to Know' - Introduction to AI agents and automation in business", "Day 2: '7 Deadly Sins of AI Adoption: Avoid These Common Mistakes' - Common pitfalls to avoid when implementing AI in your business", "Day 3: 'The AI Automation Stats You Need to See: Data Breakdown and Insights' - Statistics and data-driven insights on AI adoption in business", "Day 4: 'From Manual to Magical: How AI Automation Transformed XYZ Business' - Real-life case study of AI success in business", "Day 5: 'The Dark Side of AI: Why Over-Reliance on Automation Can Be a Recipe for Disaster' - Contrarian opinion on the risks of over-reliance on AI", "Day 6: '10 AI Automation Tools to Supercharge Your Business (And How to Use Them)' - Actionable tips and tools for implementing AI in your business", "Day 7: 'Join the AI Automation Revolution: Share Your Success Stories and Ask Questions' - Community discussion and call to action for founders and business owners to share their experiences with AI"]
+  [Background Weekly] Starting Day 1/7: 'Day 1: 'AI Revolution in Business: What You Need to Know' - Introduction to AI agents and automation in business'...
+
+  [Model Selector] Category: educational
+  [Model Selector FAILED] 'charmap' codec can't encode character '\u2192' in position 27: character maps t — using defaults
+  [Gather Context] Running parallel web searches...
+INFO:     127.0.0.1:54774 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:54777 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:54780 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54781 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54784 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54785 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:54789 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54790 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54791 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54792 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+INFO:     127.0.0.1:62398 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62400 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Groq Fallback] Used qwen/qwen3-32b
+INFO:     127.0.0.1:62402 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62404 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:56869 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56870 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:56874 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56875 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56878 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56879 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:56881 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56882 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56883 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56884 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:56887 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56889 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:56892 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56893 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56896 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56898 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:56901 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56902 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56904 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56905 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Fallback llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+INFO:     127.0.0.1:56907 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Groq Fallback] Used qwen/qwen3-32b
+INFO:     127.0.0.1:56909 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:56911 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:56914 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56916 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56917 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:56920 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56922 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56925 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56926 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56928 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+INFO:     127.0.0.1:56929 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:56933 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:56935 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56941 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56943 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:56946 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56947 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52289 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52291 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52294 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Fallback llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+INFO:     127.0.0.1:52295 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Groq Fallback] Used qwen/qwen3-32b
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:52299 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52300 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:52302 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52303 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52305 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52306 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:52309 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52310 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52312 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52314 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:52318 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52319 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:52321 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52322 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52323 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52324 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:52327 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52328 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52330 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52331 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Fallback llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+INFO:     127.0.0.1:52334 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52336 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Groq Fallback] Used qwen/qwen3-32b
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:52341 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52342 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:52344 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52345 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:52347 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52348 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52350 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52351 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52354 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52355 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:52358 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52360 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:52364 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52365 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:55777 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55778 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55779 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60818 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60820 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60821 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Fallback llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+      [Groq Fallback] Used qwen/qwen3-32b
+INFO:     127.0.0.1:60824 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60826 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:60829 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:60832 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60835 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60836 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:60839 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60840 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60841 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60842 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60851 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+INFO:     127.0.0.1:60852 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:60855 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:60857 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60861 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:60865 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60866 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60867 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60868 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60869 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Fallback llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+INFO:     127.0.0.1:60870 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Groq Fallback] Used qwen/qwen3-32b
+INFO:     127.0.0.1:60875 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60876 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60878 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60879 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60881 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60882 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60886 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60887 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60889 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60890 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:60892 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60894 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:60896 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60897 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:60900 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60902 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60903 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52283 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52287 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52288 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+      [Groq Fallback] Used llama-3.3-70b-versatile
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:52292 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52293 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:52295 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52296 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52298 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52299 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:52302 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52304 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52305 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52306 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:52312 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52314 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:52317 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52318 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52319 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:52321 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52323 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52324 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52327 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52329 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Fallback llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+      [Groq Fallback] Used qwen/qwen3-32b
+INFO:     127.0.0.1:52332 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52334 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:52339 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:52341 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52343 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52344 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:52346 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52347 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52356 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52357 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52360 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+INFO:     127.0.0.1:52362 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:52364 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:52366 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52370 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52371 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:52373 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52374 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52375 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52376 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64076 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Fallback llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+INFO:     127.0.0.1:64078 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Groq Fallback] Used qwen/qwen3-32b
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:49792 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49794 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:49796 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49797 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49801 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49802 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:49804 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49805 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49806 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49807 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:49810 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49811 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:49814 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49816 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49817 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:49819 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49823 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49824 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49825 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49826 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Fallback llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+INFO:     127.0.0.1:49828 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Groq Fallback] Used qwen/qwen3-32b
+INFO:     127.0.0.1:49830 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:49833 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:49836 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49838 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49840 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 3/3 in 24s...
+INFO:     127.0.0.1:49842 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49843 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49847 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49848 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49849 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Primary qwen/qwen3.6-27b failed] Rate limit exhausted for qwen/qwen3.6-27b
+INFO:     127.0.0.1:49850 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 1/3 in 8s...
+INFO:     127.0.0.1:49852 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 2/3 in 16s...
+INFO:     127.0.0.1:49854 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49856 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49857 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:llama-3.3-70b-versatile] Retry 3/3 in 24s...
+INFO:     127.0.0.1:49860 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49863 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49864 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Fallback llama-3.3-70b-versatile failed] Rate limit exhausted for llama-3.3-70b-versatile
+INFO:     127.0.0.1:62275 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [Groq Fallback] Used qwen/qwen3-32b
+      [RateLimit:qwen/qwen3.6-27b] Retry 1/3 in 8s...
+INFO:     127.0.0.1:62280 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+      [RateLimit:qwen/qwen3.6-27b] Retry 2/3 in 16s...
+INFO:     127.0.0.1:62282 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62290 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62298 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62299 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50063 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50064 - "GET /api/posts/calendar HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "GET /api/posts/calendar HTTP/1.1" 200 OK

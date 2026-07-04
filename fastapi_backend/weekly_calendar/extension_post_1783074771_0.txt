@@ -1,0 +1,18 @@
+DATE: 2026-07-03
+TOPIC: Scraped from Extension
+SCORE: N/A
+
+🗣️ "Bro, AI agents and automation code panrathu easy dhaane?" 
+👤 "Easy thaan. But do you know the core concept of how it actually works?" 🗣️ "Enna bro solra, onnum purila..."
+
+Here is the hidden truth about building AI agents. Coding is never the first step.
+
+🧠 70% is Business Logic: Mapping the graph, understanding the business process, and structuring the workflow. 💻
+ 30% is Development: Actually writing the code (and dealing with all the bugs!).
+
+You have to map the process before you write the code.
+
+If you want to develop AI agents on my platform, or need consulting to implement automation into your business operations...
+
+Drop a comment or DM me. Let's talk! 🚀
+…more

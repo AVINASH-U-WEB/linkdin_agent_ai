@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  
+  --color-crex-bg: #e6eff8;
+  --color-crex-text: #1a2b4c;
+  --color-crex-blue: #1668e8;
+  --color-crex-blue-light: #448aff;
+  --color-crex-dark: #122240;
+  --color-crex-grey: #8fa0b5;
+}
+
+/* ── Light Mode (default) ── */
+:root {
+  --background: #e6eff8;
+  --foreground: #1a2b4c;
+  --card-bg: #ffffff;
+  --card-border: rgba(255,255,255,0.4);
+  --glass-bg: rgba(255, 255, 255, 0.65);
+  --glass-shadow: rgba(31, 38, 135, 0.05);
+  --nav-bg: rgba(255, 255, 255, 0.65);
+  --text-muted: #8fa0b5;
+  --input-bg: #f3f7fb;
+  --input-border: #e2eaf4;
+  --notif-bg: #ffffff;
+  --notif-border: #e8f0fb;
+}
+
+/* ── Dark Mode ── */
+[data-theme='dark'] {
+  --background: #0d1117;
+  --foreground: #e6edf3;
+  --card-bg: #161b22;
+  --card-border: rgba(48, 54, 61, 0.8);
+  --glass-bg: rgba(22, 27, 34, 0.85);
+  --glass-shadow: rgba(0, 0, 0, 0.3);
+  --nav-bg: rgba(22, 27, 34, 0.9);
+  --text-muted: #7d8590;
+  --input-bg: #21262d;
+  --input-border: #30363d;
+  --notif-bg: #161b22;
+  --notif-border: #21262d;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ── Card utilities — now theme-aware ── */
+@layer utilities {
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 8px 32px 0 var(--glass-shadow);
+    border-radius: 1.5rem;
+  }
+  
+  .solid-card {
+    background: var(--card-bg);
+    border-radius: 1.5rem;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.04);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+  
+  .dark-card {
+    background: linear-gradient(145deg, #182b4c, #11203b);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 24px 0 rgba(17, 32, 59, 0.4);
+    color: white;
+  }
+
+  /* ── Form inputs ── */
+  .theme-input {
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    color: var(--foreground);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+  }
+  .theme-input:focus {
+    outline: none;
+    border-color: #1668e8;
+  }
+  .theme-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  /* ── Custom Scrollbar ── */
+  .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+  .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { background-color: var(--input-border); border-radius: 4px; }
+  
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+

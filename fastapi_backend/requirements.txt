@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+langgraph
+langchain-groq
+langchain-core
+python-dotenv
+pydantic
+supabase
+duckduckgo-search
+tavily-python
+wikipedia
+huggingface_hub
+requests
