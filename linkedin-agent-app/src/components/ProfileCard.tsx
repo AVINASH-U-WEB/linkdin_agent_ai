@@ -163,8 +163,8 @@ const AccordionItem = ({ title, value, icon, children, defaultOpen = false }: { 
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="flex items-center space-x-3">
-           {icon && React.cloneElement(icon as React.ReactElement, {
-             className: `${(icon as React.ReactElement).props.className} group-hover:text-crex-blue transition-colors`
+           {icon && React.cloneElement(icon as React.ReactElement<any>, {
+             className: `${(icon as React.ReactElement<any>).props.className || ''} group-hover:text-crex-blue transition-colors`
            })}
            <span className="text-crex-text font-medium group-hover:text-crex-blue transition-colors">{title}</span>
         </div>

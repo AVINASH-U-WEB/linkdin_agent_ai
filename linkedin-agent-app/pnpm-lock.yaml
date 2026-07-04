@@ -42,6 +42,12 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.3.1
+      '@types/estree':
+        specifier: ^1.0.9
+        version: 1.0.9
+      '@types/json-schema':
+        specifier: ^7.0.15
+        version: 7.0.15
       '@types/node':
         specifier: ^20.19.43
         version: 20.19.43

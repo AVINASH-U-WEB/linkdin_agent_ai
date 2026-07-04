@@ -399,7 +399,7 @@ export default function Home() {
             <div className="h-1.5 bg-gray-900/10 dark:bg-gray-100/10 shrink-0">
               <div
                 className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-[0_0_12px_rgba(56,189,248,0.7)] transition-all duration-700 ease-out rounded-r-full"
-                style={{ width: genProgress?.total_days > 0 ? `${((genProgress?.current_day || 0) / genProgress.total_days) * 100}%` : '5%' }}
+                style={{ width: (genProgress?.total_days ?? 0) > 0 ? `${((genProgress?.current_day ?? 0) / (genProgress?.total_days ?? 1)) * 100}%` : '5%' }}
               />
             </div>
 
