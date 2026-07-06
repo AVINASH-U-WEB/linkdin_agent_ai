@@ -50,32 +50,39 @@ export default function Home() {
   const [showGeneratorModal, setShowGeneratorModal] = useState(false);
   const prevCalendarLengthRef = useRef(calendar.length);
 
-  // ── On mount: check if generation was running before reload ──────────────────
+  // ── On mount & Session Load ──────────────────────────────────────────────────
   useEffect(() => {
-    // 1. Re-check the backend — if it's still processing, restore the generating UI
+    // 1. Re-check the backend
     dispatch(checkGenerationOnMount());
-    // 2. Fetch health & calendar
+    
+    // 2. Fetch health
     fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/health`)
       .then(r => r.json()).then(setHealth).catch(() => {});
-    if (session?.user?.id) {
-      dispatch(fetchCalendar(session.user.id as string));
-    }
+  }, [dispatch]);
 
-    // 3. Smart calendar polling — pause when tab hidden
+  // ── Smart Polling & Initial Fetch (Requires Session) ─────────────────────────
+  useEffect(() => {
+    const userId = (session?.user as any)?.id;
+    if (!userId) return;
+
+    // Initial fetch once session is loaded
+    dispatch(fetchCalendar(userId));
+
     const POLL_MS = 12000;
     const interval = setInterval(() => {
-      if (!document.hidden && session?.user?.id) dispatch(fetchCalendar(session.user.id as string));
+      if (!document.hidden) dispatch(fetchCalendar(userId));
     }, POLL_MS);
+    
     const onVisibility = () => {
-      if (!document.hidden && session?.user?.id) dispatch(fetchCalendar(session.user.id as string));
+      if (!document.hidden) dispatch(fetchCalendar(userId));
     };
+    
     document.addEventListener("visibilitychange", onVisibility);
     return () => {
       clearInterval(interval);
       document.removeEventListener("visibilitychange", onVisibility);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [session, dispatch]);
 
   // ── Detect when calendar grows → generation complete ─────────────────────────
   useEffect(() => {
