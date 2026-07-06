@@ -108,7 +108,7 @@ export default function Home() {
           const data = await res.json();
           dispatch(updateProgress(data));
           // If generation just finished, refetch calendar to get new posts
-          if (!data.active && session?.user?.id) dispatch(fetchCalendar(session.user.id as string));
+          if (!data.active && (session?.user as any)?.id) dispatch(fetchCalendar((session?.user as any).id as string));
         }
       } catch {}
     };
