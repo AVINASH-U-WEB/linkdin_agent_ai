@@ -19,8 +19,8 @@ export interface CalendarState {
 // ── Async thunk ───────────────────────────────────────────────────────────────
 export const fetchCalendar = createAsyncThunk(
   'calendar/fetch',
-  async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/calendar`);
+  async (userId: string) => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/calendar?user_id=${userId}`);
     if (!res.ok) throw new Error('Calendar fetch failed');
     const data = await res.json();
     return (data.calendar || []) as Post[];
@@ -29,8 +29,8 @@ export const fetchCalendar = createAsyncThunk(
 
 export const resetCalendar = createAsyncThunk(
   'calendar/reset',
-  async () => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/calendar/reset`, { method: 'POST' });
+  async (userId: string) => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/calendar/reset?user_id=${userId}`, { method: 'POST' });
     if (!res.ok) throw new Error('Reset failed');
     return [];
   }
@@ -38,8 +38,8 @@ export const resetCalendar = createAsyncThunk(
 
 export const deletePost = createAsyncThunk(
   'calendar/delete',
-  async (date: string) => {
-    const res = await fetch(`http://localhost:8000/api/posts/${date}`, { method: 'DELETE' });
+  async ({ date, userId }: { date: string, userId: string }) => {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/${date}?user_id=${userId}`, { method: 'DELETE' });
     if (!res.ok) throw new Error('Delete failed');
     return date;
   }

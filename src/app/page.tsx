@@ -57,15 +57,17 @@ export default function Home() {
     // 2. Fetch health & calendar
     fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/health`)
       .then(r => r.json()).then(setHealth).catch(() => {});
-    dispatch(fetchCalendar());
+    if (session?.user?.id) {
+      dispatch(fetchCalendar(session.user.id as string));
+    }
 
     // 3. Smart calendar polling — pause when tab hidden
     const POLL_MS = 12000;
     const interval = setInterval(() => {
-      if (!document.hidden) dispatch(fetchCalendar());
+      if (!document.hidden && session?.user?.id) dispatch(fetchCalendar(session.user.id as string));
     }, POLL_MS);
     const onVisibility = () => {
-      if (!document.hidden) dispatch(fetchCalendar());
+      if (!document.hidden && session?.user?.id) dispatch(fetchCalendar(session.user.id as string));
     };
     document.addEventListener("visibilitychange", onVisibility);
     return () => {
@@ -99,7 +101,7 @@ export default function Home() {
           const data = await res.json();
           dispatch(updateProgress(data));
           // If generation just finished, refetch calendar to get new posts
-          if (!data.active) dispatch(fetchCalendar());
+          if (!data.active && session?.user?.id) dispatch(fetchCalendar(session.user.id as string));
         }
       } catch {}
     };
@@ -121,10 +123,11 @@ export default function Home() {
     setShowGeneratorModal(false);
 
     try {
+      const payload = { ...data, user_id: (session?.user as any)?.id || 'anonymous' };
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/workflow/generate-weekly`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
 
       if (res.ok) {
@@ -156,8 +159,9 @@ export default function Home() {
       if (imageFile) formData.append("image", imageFile);
       const userToken = (session?.user as any)?.linkedinAccessToken;
       if (userToken) formData.append("linkedin_token", userToken);
+      formData.append("user_id", (session?.user as any)?.id || "anonymous");
 
-      const res = await fetch(`http://localhost:8000/api/posts/publish/${date}`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/posts/publish/${date}`, {
         method: "POST",
         body: formData,
       });
@@ -178,7 +182,7 @@ export default function Home() {
   const handleReset = async () => {
     if (!confirm("Are you sure you want to clear the entire publishing queue? This cannot be undone.")) return;
     try {
-      await dispatch(resetCalendar()).unwrap();
+      await dispatch(resetCalendar((session?.user as any)?.id || 'anonymous')).unwrap();
       addNotification({ type: 'info', title: 'Queue Cleared', message: 'Publishing queue has been completely reset.' });
     } catch {
       addNotification({ type: 'error', title: 'Error', message: 'Could not reset the calendar.' });
@@ -188,7 +192,7 @@ export default function Home() {
   const handleDeletePost = async (date: string) => {
     if (!confirm(`Delete the post scheduled for ${date}?`)) return;
     try {
-      await dispatch(deletePost(date)).unwrap();
+      await dispatch(deletePost({ date, userId: (session?.user as any)?.id || 'anonymous' })).unwrap();
       addNotification({ type: 'info', title: 'Post Deleted', message: `Post for ${date} deleted.` });
     } catch {
       addNotification({ type: 'error', title: 'Delete Failed', message: 'Could not delete post.' });
