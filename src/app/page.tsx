@@ -53,7 +53,10 @@ export default function Home() {
   // ── On mount & Session Load ──────────────────────────────────────────────────
   useEffect(() => {
     // 1. Re-check the backend
-    dispatch(checkGenerationOnMount());
+    const userId = (session?.user as any)?.id;
+    if (userId) {
+      dispatch(checkGenerationOnMount(userId));
+    }
     
     // 2. Fetch health
     fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/health`)
@@ -100,10 +103,11 @@ export default function Home() {
   useEffect(() => {
     if (!isGenerating) return;
     const POLL_MS = isMinimized ? 4000 : 2000;
+    const userId = (session?.user as any)?.id;
 
     const poll = async () => {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/workflow/progress`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'}/api/workflow/progress?user_id=${userId || 'anonymous'}`);
         if (res.ok) {
           const data = await res.json();
           dispatch(updateProgress(data));
