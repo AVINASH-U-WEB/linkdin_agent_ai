@@ -1,14 +1,23 @@
-fastapi
-uvicorn
+# Core API
+fastapi==0.111.0
+uvicorn[standard]==0.30.1
+python-multipart==0.0.9
+
+# AI / LangChain
 langgraph
 langchain-groq
 langchain-core
-python-dotenv
-pydantic
-supabase
+
+# Database
+supabase==2.5.0
+
+# Web Search
 duckduckgo-search
 tavily-python
 wikipedia
-huggingface_hub
+
+# Utilities
+python-dotenv
+pydantic
 requests
-python-multipart
+httpx
