@@ -326,11 +326,16 @@ export default function Home() {
           <div className="bg-white rounded-t-3xl sm:rounded-3xl p-8 w-full sm:max-w-md shadow-2xl text-center">
             <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><span className="text-3xl">🔌</span></div>
             <h2 className="text-2xl font-bold text-slate-800 mb-2">Scraping Required</h2>
-            <p className="text-slate-600 mb-6 leading-relaxed">You selected <strong>&quot;Use My LinkedIn Style&quot;</strong>, but you haven&apos;t scraped any posts yet!<br/><br/>Open the Chrome Extension on LinkedIn and click <strong>&quot;Scrape Posts&quot;</strong> first.</p>
+            <p className="text-slate-600 mb-6 leading-relaxed">
+              You selected <strong>&ldquo;Use My LinkedIn Style&rdquo;</strong>, but you haven&apos;t scraped any posts yet!
+              <br/><br/>
+              Open the Chrome Extension on LinkedIn and click <strong>&ldquo;Scrape Posts&rdquo;</strong> first.
+            </p>
             <button onClick={() => setShowScrapeModal(false)} className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all">Got it!</button>
           </div>
         </div>
       )}
+
 
       {/* Success Modal */}
       {showSuccessModal && (
