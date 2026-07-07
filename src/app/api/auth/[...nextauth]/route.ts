@@ -2,12 +2,7 @@ import NextAuth, { NextAuthOptions } from "next-auth";
 import LinkedInProvider from "next-auth/providers/linkedin";
 import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
-
-export const authOptions: NextAuthOptions = {
+const authOptions: NextAuthOptions = {
   providers: [
     LinkedInProvider({
       clientId: process.env.LINKEDIN_CLIENT_ID!,
@@ -32,18 +27,26 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ user, account, profile }) {
       if (account?.provider === "linkedin") {
-        const { error } = await supabase
-          .from("users")
-          .upsert({
-            id: user.id,
-            name: user.name,
-            email: user.email,
-            image: user.image,
-            linkedin_access_token: account.access_token,
-          }, { onConflict: 'id' });
-          
-        if (error) {
-          console.error("Error saving user to Supabase:", error);
+        const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+        const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+        
+        if (supabaseUrl && supabaseKey) {
+          const supabase = createClient(supabaseUrl, supabaseKey);
+          const { error } = await supabase
+            .from("users")
+            .upsert({
+              id: user.id,
+              name: user.name,
+              email: user.email,
+              image: user.image,
+              linkedin_access_token: account.access_token,
+            }, { onConflict: 'id' });
+            
+          if (error) {
+            console.error("Error saving user to Supabase:", error);
+          }
+        } else {
+          console.error("Missing Supabase environment variables.");
         }
       }
       return true;
