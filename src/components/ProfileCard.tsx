@@ -120,7 +120,7 @@ const ProfileCard = ({ health }: { health?: HealthData }) => {
           defaultOpen={true}
         >
           <div className="flex flex-col space-y-2 mb-2">
-             {health?.llm_models.map((model, idx) => (
+             {health?.llm_models?.map((model, idx) => (
                 <div key={idx} className="flex items-center justify-between bg-white rounded-2xl p-3 shadow-sm border border-transparent hover:border-crex-blue/10 transition-colors">
                   <div className="flex flex-col">
                     <span className="text-sm font-medium text-crex-text">{model.split(' ')[0]}</span>
